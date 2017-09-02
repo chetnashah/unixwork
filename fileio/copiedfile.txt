@@ -1,0 +1,8 @@
+
+stdio (standard io) is buffered interface to stdin, stdout
+
+open, read, write, lseek and close do unbuffered IO.
+
+The file descriptor values for stdin and stdout are
+0 and 1, but it is better to use STDIN_FILENO and STDOUT_FILENO
+for portability
