@@ -8,7 +8,7 @@ Three primary functions for processcontrol :
 Threading model in unix is Pthreads which is short for posix threads:
 
 NOTE: On Linux, programs that use Pthreads API should compiled using -pthread
-flag.
+flag and the header file to include is \<pthread.h\>.
 
 A process can have multiple threads.
 All threads in a given process share same heap and data segments,
