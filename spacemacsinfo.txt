@@ -1,0 +1,13 @@
+#### System Info :computer:
+- OS: gnu/linux
+- Emacs: 24.5.1
+- Spacemacs: 0.200.13
+- Spacemacs branch: master (rev. 582f9aa)
+- Graphic display: nil
+- Distribution: spacemacs
+- Editing style: vim
+- Completion: ivy
+- Layers:
+```elisp
+(ivy emacs-lisp scheme)
+```

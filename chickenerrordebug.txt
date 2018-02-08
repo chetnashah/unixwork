@@ -1,0 +1,49 @@
+
+Error: [internal compiler error] bad expression: 1
+
+	Call history:
+
+	<syntax>	  (parse-csi-apropos-arguments iargs)
+	<syntax>	  (##core#begin (##core#let () (if (null? aargs) (display-apropos-help) (apply apropos aargs))))
+	<syntax>	  (##core#let () (if (null? aargs) (display-apropos-help) (apply apropos aargs)))
+	<syntax>	  (##core#begin (##core#if (null? aargs) (display-apropos-help) (apply apropos aargs)))
+	<syntax>	  (##core#if (null? aargs) (display-apropos-help) (apply apropos aargs))
+	<syntax>	  (null? aargs)
+	<syntax>	  (display-apropos-help)
+	<syntax>	  (apply apropos aargs)
+	<syntax>	  (when (feature? csi:) (toplevel-command (quote a) csi-apropos-command *csi-apropos-help*))
+	<syntax>	  (##core#if (feature? csi:) (##core#begin (toplevel-command (quote a) csi-apropos-command *csi-apropo......
+	<syntax>	  (feature? csi:)
+	<syntax>	  (##core#begin (toplevel-command (quote a) csi-apropos-command *csi-apropos-help*))
+	<syntax>	  (toplevel-command (quote a) csi-apropos-command *csi-apropos-help*)
+	<syntax>	  (quote a)
+	<syntax>	  (##core#quote a)
+	<syntax>	  (##core#undefined)	<--
+
+Error: shell command failed with nonzero exit status 256:
+
+  '/usr/bin/csc' -feature compiling-extension -setup-mode    apropos.scm -shared -optimize-leaf-routines -inline -output-file apropos.so -emit-import-library apropos -emit-type-file apropos.types -fixnum-arithmetic -O3 -d1 -no-procedure-checks
+
+	Call history:
+
+	setup-api.scm:268: ##sys#print	  
+	setup-api.scm:268: ##sys#print	  
+	setup-api.scm:268: ##sys#write-char-0	  
+	setup-api.scm:268: ##sys#flush-output	  
+	setup-api.scm:269: $system	  
+	setup-api.scm:627: system	  
+	setup-api.scm:633: open-output-string	  
+	setup-api.scm:633: ##sys#print	  
+	setup-api.scm:633: ##sys#print	  
+	setup-api.scm:633: ##sys#write-char-0	  
+	setup-api.scm:633: ##sys#write-char-0	  
+	setup-api.scm:633: ##sys#write-char-0	  
+	setup-api.scm:633: ##sys#print	  
+	setup-api.scm:633: ##sys#print	  
+	setup-api.scm:633: get-output-string	  
+	setup-api.scm:632: error	  	<--
+
+
+Error: shell command terminated with nonzero exit code
+17920
+"'/usr/bin/csi' -bnq -setup-mode -e \"(require-library setup-api)\" -e \"(import...
